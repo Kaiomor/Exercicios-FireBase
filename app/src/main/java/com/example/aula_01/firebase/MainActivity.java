@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 // criar chave //
-    private static final  int RC_SING_IN =  1995;
+    private static final  int RC_SIGN_IN =  1995;
      
     private final FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
     private GoogleSignInClient googleSignInClient;
@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                startActivityForResult(googleSignInClient.getSignInIntent(), RC_SING_IN);
+                startActivityForResult(googleSignInClient.getSignInIntent(), RC_SIGN_IN);
             }
         });
     }
@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == RC_SING_IN) {
+        if (requestCode == RC_SIGN_IN) {
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
 
             try {
